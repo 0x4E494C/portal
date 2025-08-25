@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0 x 4E 49 4C</title>
+
+    <link rel="stylesheet" th:href="@{style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Daniil Nilov</h1>
+            <p>Веб-разработка | Java | Python</p>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Обо мне ↓</a></li>
+                <li><a href="#skills">Навыки ↓</a></li>
+                <li><a href="#experience">Опыт работы ↓</a></li>
+                <li><a th:href="@{contact}">Связаться со мной</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="divider"></div>
+
+    <main class="container">
+        <section id="about" class="resume-section">
+            <h2>Обо мне</h2>
+            <p>Начинающий Java разработчик</p>
+            <p>Есть опыт в разработке приложений для Android, работе с API сторонних сервисов и анализе больших данных.</p>
+            <p>Для разработки применяю IDE IntellijIDEA, ОС Windows 11/SelectOS, контейнеры Docker.</p>
+            <p></p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="skills" class="resume-section">
+            <h2>Hard skills</h2>
+            
+            <div class="skill-category">
+                <div class="skill-header unselectable" onclick="toggleSkills(this)">
+                    <h3>Front-end</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <ul class="skill-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Python | Kivy</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-header unselectable" onclick="toggleSkills(this)">
+                    <h3>Back-end</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <ul class="skill-list">
+                    <li>Java | Spring</li>
+                    <li>Python | Flask</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-header unselectable" onclick="toggleSkills(this)">
+                    <h3>Other</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <ul class="skill-list">
+                    <li>OpenCV</li>
+                    <li>CUDA</li>
+                    <li>Pandas</li>
+                    <li>Numpy</li>
+
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-header unselectable" onclick="toggleSkills(this)">
+                    <h3>Tech</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <ul class="skill-list">
+                    <li>SelectOS</li>
+                    <li>Windows Server 2025</li>
+                    <li>Git</li>
+                    <li>Bash/PS</li>
+                    <li>Docker</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="experience" class="resume-section">
+            <h2>Опыт работы</h2>
+            
+            <div class="job-item">
+                <h3>Специалист, Сектор обслуживания дебетовых карт.</h3>
+                <div class="job-date">[REDACTED NDA] | 24.04.2024 - 16.08.2024</div>
+                <p>Консультация клиентов по вопросам обслуживания дебетовых карт.</p>
+                <ul>
+                    <li>Обработка входящих обращений по телефону</li>
+                    <li>Консультация по условиям обслуживания, тарифам и продуктам банка</li>
+                    <li>Обработка претензий и жалоб</li>
+                    <li>Оказание помощи в решении проблем с банковскими картами</li>
+                </ul>
+            </div>
+
+            <div class="job-item">
+                <h3>Специалист по обслуживанию клиентов контактного центра</h3>
+                <div class="job-date">[REDACTED NDA] | 15.02.2025 - настоящее время</div>
+                <p>Обработка входящих обращений клиентов авиакомпании.</p>
+                <ul>
+                    <li>Консультация по условиям и правилам перелёта, маршрутам, тарифам и уровням обслуживания</li>
+                    <li>Обработка претензий и жалоб</li>
+                    <li>Оказание помощи в обмене и возврате авиабилетов</li>
+                    <li>Работа в специализированной системе бронирования</li>
+                </ul>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <div class="divider"></div>
+
+    <footer>
+        <div class="container">
+            <p>2025 | 0 x 4E 49 4C</p>
+            <p>Layout generated by LLM Claude 3.7</p>
+            <p><a th:href="@{contact}">Связаться со мной</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleSkills(element) {
+            const category = element.parentElement;
+            const isActive = category.classList.contains('active');
+
+            document.querySelectorAll('.skill-category').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (!isActive) {
+                category.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstCategory = document.querySelector('.skill-category');
+            if (firstCategory) {
+                firstCategory.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html> 
